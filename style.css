@@ -1,4 +1,4 @@
- .heading{
+.heading{
     font-size: 25px;
     font-family: Roboto;
     font-weight: bold;
@@ -72,7 +72,17 @@ h1 {
     color: #888;
 }
 
+.country-header {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: row; /* Aligns items in a row */
+    align-items: center; /* Centers items vertically */
+}
+
 .flag{
     height: 64px;
     width: 64px;
+    font-size: small;
+    background-color: #fff;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire area */
 }
