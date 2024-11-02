@@ -1,8 +1,11 @@
 // Function to fetch rates from an API and update the DOM
 async function updateRates() {
     try {
-        // Replace 'your-api-endpoint' with the actual API endpoint
-        const response = await fetch('your-api-endpoint');
+        // Define the API endpoint and headers with the API key
+        const apiUrl = 'https://www.westernunion.com/wuconnect/prices/products';
+
+        // Fetch data from the API with headers
+        const response = await fetch(apiUrl, { method: 'GET', headers: { 'Authorization': 'Bearer 2fb48e04-f2a9-4a71-b793-cc1520db9071' } });
         const data = await response.json();
 
         // Assuming the API returns an object with country names as keys and rates as values

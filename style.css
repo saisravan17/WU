@@ -1,16 +1,22 @@
-.heading{
-    font-size: 25px;
-    font-family: Roboto;
-    font-weight: bold;
-    color: #ffdd00;
-    position: absolute;
- }
- 
-.container {
-    width: 1080px; 
-    height: 1920px;
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #000;
+    color: #fff;
+    text-align: center;
     padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .header {
@@ -18,71 +24,119 @@
 }
 
 .logo {
-    width: 150px;
-}
-
-h1 {
-    font-size: 5rem;
-    color: #ffd700;
-    margin: 10px 100px;
-    text-align: center;
-}
-
-.rates {
-    margin: 2rem 2rem;
-}
-
-.country {
-    margin-bottom: 20px;
-}
-
-.country h2 {
-    font-size: 1rem;
-    color: #fff;
+    width: 120px;
     margin-bottom: 10px;
 }
 
-.rate-box {
-    background-color: #ffffff;
-    padding: 10px;
-    margin: 5px 0;
+.header h1 {
+    font-size: 1.2em;
+    color: #FFD700;
+}
+
+.rates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.country {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.country-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.country-header img.flag {
+    width: 24px;
+    height: auto;
+    border-radius: 2px;
+}
+
+.country-header h2 {
+    font-size: 1.1em;
+    color: #FFD700;
+    margin: 0;
+}
+
+/* Make rate-boxes horizontal and connected */
+.rate-box-container {
+    display: flex;
+    gap: 2px;
+    background-color: white; /* White background around rate-boxes */
     border-radius: 5px;
-    display: inline-block;
-    text-align: center;
+    overflow: hidden; /* Ensures the rate-boxes stay connected */
+    overflow-x: auto; /* Add horizontal scrolling */
 }
-.rate-box p{
-    font-size:10px ;
+
+.rate-box {
+    flex: 1; /* Ensures each box takes equal space */
+    background-color: white;
+    padding: 10px 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Text color for better contrast on white */
+    border-right: 1px solid #ccc; /* Divider between boxes */
 }
+
+.rate-box:last-child {
+    border-right: none; /* Remove the right border for the last box */
+}
+
+.rate-box p {
+    font-size: 0.8em;
+    margin: 0;
+    color: #555; /* Lighter color for text */
+}
+
 .rate-box span {
-    color: #000000;
+    font-size: 1em;
     font-weight: bold;
+    color: #000;
 }
 
 .footer {
     margin-top: 20px;
 }
 
-.footer p {
-    font-size: 0.8rem;
-    color: #fff;
+.footer h1 {
+    font-size: 0.8em;
+    color: #FFD700;
+
+}
+.footer .footer-date {
+    color: #ccc;
 }
 
 .disclaimer {
-    font-size: 0.7rem;
-    color: #888;
+    font-size: 0.7em;
+    margin-top: 5px;
+    color: #777;
 }
 
-.country-header {
-    display: flex; /* Enables flexbox layout */
-    flex-direction: row; /* Aligns items in a row */
-    align-items: center; /* Centers items vertically */
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header h1, .footer h1 {
+        font-size: 1em;
+    }
 
-.flag{
-    height: 64px;
-    width: 64px;
-    font-size: small;
-    background-color: #fff;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the entire area */
+    .country-header h2 {
+        font-size: 1em;
+    }
+
+    .rate-box p {
+        font-size: 0.7em;
+    }
+
+    .rate-box span {
+        font-size: 0.9em;
+    }
 }
